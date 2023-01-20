@@ -21,6 +21,11 @@ stages {
 
 		}
 	}
+	stage("deploy to Prod"){
+		steps {
+			echo "deploy the page to the production"
+		}
+	}
 
 	}
 }
