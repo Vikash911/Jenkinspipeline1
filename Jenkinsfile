@@ -6,18 +6,19 @@ stages {
 	stage("SCM") {
 		steps{
 			echo "pull the code from the github"	
+			git 'https://github.com/Vikash911/maven-app.git'
 		}
 
 		}
 	stage("Deploy") {
 		steps {
-			echo "deploy the web page"
+			sh 'mvn clean package'
 		}
 		
 		}
 	stage("Test"){
 		steps {
-			echo "testing the app"
+			sh 'java -jar target/*.jar'
 
 		}
 	}
